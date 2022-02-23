@@ -1,3 +1,4 @@
+import 'package:evento/page/event_editing_page.dart';
 import 'package:evento/widget/calendar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
         accentColor: Colors.white,
+        primaryColor: Colors.red,
       ),
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -43,6 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Evento'),
       ),
       body: CalendarWidget(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add, color: Colors.white,),
+        backgroundColor: Colors.red,
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) =>EventEditingPage() ),
+        ),
+      ),
     );
   }
 }
